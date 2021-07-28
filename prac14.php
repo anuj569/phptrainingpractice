@@ -40,11 +40,12 @@ $arr = array(
     <th>DEPT</th>
   </tr>
 <?php 
+$arr = array_values($arr);
 foreach($arr as $key => $val) 
 {
 ?>	
   <tr>
-    <td><?php echo $key;?></td>
+    <td><?php echo $key+1;?></td>
     <td><?php echo $val['name'];?></td>
     <td><?php echo $val['dept']?></td>
   </tr>
