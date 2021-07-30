@@ -6,6 +6,8 @@ $num = 10;
 $str = '#@hello world, $num is highest value \n and you you \'have to score this,';
 echo $str;
 echo "<br>";
+echo substr($str,-3);exit;
+echo "<br>";
 echo substr($str,0,20);
 echo "<br>";
 echo strlen($str);
