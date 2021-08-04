@@ -6,7 +6,7 @@ if(!empty($_REQUEST)){
     //print_r($_REQUEST);
     $error = array();
     if(!empty($_REQUEST['username'])){
-        if(strlen($_REQUEST['username'] <=5)){
+        if(strlen($_REQUEST['username']) <=5){
             $error['username'] = "Username can not be less than 6";               
         }
     }
@@ -15,17 +15,17 @@ if(!empty($_REQUEST)){
     }
 
     if(!empty($_REQUEST['password'])){
-        if(strlen($_REQUEST['password'] <=8)){
+        if(strlen($_REQUEST['password']) <=8){
             $error['password'] = "Password can not be less than 9";               
         }
     }
     else{
         $error['password'] = "Password can not be blank";               
     }
-    print_r($error);
+    
     if(empty($error)){
         //$login = validate_login($_REQUEST['username'],$_REQUEST['password']);
-        $login = false;
+        $login = true;
         if($login){
             //set the session
             header("location: home.php");
@@ -47,7 +47,7 @@ if(!empty($_REQUEST)){
                         <h4>Welcome Guest</h4>
                         <div class="col-12">
                             <label>Username</label>
-                            <input type="text" name="username" class="form-control" placeholder="Username">
+                            <input type="text" name="username" class="form-control" placeholder="Username" value="<?php if(!empty($_REQUEST['username'])) echo $_REQUEST['username'];?>">
         			<small id="passwordHelp" class="text-danger">
                         <?php if(!empty($error['username'])) echo $error['username'];?>
         			</small>      
