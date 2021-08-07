@@ -28,6 +28,7 @@ if(!empty($_REQUEST)){
         $login = true;
         if($login){
             //set the session
+            $_SESSION['name'] = $_REQUEST['username'];
             header("location: home.php");
             exit;
         }

@@ -114,7 +114,7 @@ if ($uploadOk == 0) {
                         </div>
                         <div class="col-12">
                             <label class="form-label" for="customFile">Background Image</label>
-                            <input type="file" class="form-control" id="bgfile" name="bgfile"/>     
+                            <input type="file" class="form-control" id="bgfile" name="bgfile[]" multiple />     
                         </div>
                         <div class="col-12">
 			    <a href="register.php" class="btn btn-primary" role="button">Sign Up</a>

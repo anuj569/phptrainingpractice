@@ -10,5 +10,6 @@
   <script src="js/jquery.min.js"></script>
   <script src="js/bootstrap.min.js"></script>
 </head>
+<?php session_start(); ?>
 <?php require_once("constants.php"); ?>
 <?php require_once("common_functions.php"); ?>
