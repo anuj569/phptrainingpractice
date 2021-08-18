@@ -12,6 +12,10 @@
   <script>
   </script>  
 </head>
-<?php session_start(); ?>
+<?php 
+  session_start(); 
+  $conn = mysqli_connect("localhost","root","Admin@123","practice");
+?>
+
 <?php require_once("constants.php"); ?>
 <?php require_once("common_functions.php"); ?>

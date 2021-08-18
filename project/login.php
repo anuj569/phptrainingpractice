@@ -15,7 +15,7 @@ if(!empty($_REQUEST)){
     }
 
     if(!empty($_REQUEST['password'])){
-        if(strlen($_REQUEST['password']) <=8){
+        if(strlen($_REQUEST['password']) <=5){
             $error['password'] = "Password can not be less than 9";               
         }
     }
@@ -24,11 +24,35 @@ if(!empty($_REQUEST)){
     }
     
     if(empty($error)){
+        $encoded_pwd = md5($_REQUEST['password']);
         //$login = validate_login($_REQUEST['username'],$_REQUEST['password']);
-        $login = true;
+        $query = "select * from customer WHERE firstname='{$_REQUEST['username']}' AND password = '$encoded_pwd'";
+        echo $query;
+        $result = mysqli_query($conn, $query);
+        if($result){
+            echo "here1";
+            if(mysqli_num_rows($result) == 1){
+                echo "here2";
+                $user_data = mysqli_fetch_assoc($result);
+                //print_r($user_data);exit;
+                $login = true;
+            }
+            else{
+                echo "here3";
+                $login = false;    
+            }
+        }
+        else{
+            echo "here4";
+            $login = false;    
+        }
+
+        //$login = true;
         if($login){
             //set the session
-            $_SESSION['name'] = $_REQUEST['username'];
+            $_SESSION['name'] = $user_data['firstname'];
+            $_SESSION['id'] = $user_data['id'];
+            $_SESSION['city'] = $user_data['city'];
             header("location: home.php");
             exit;
         }

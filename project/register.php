@@ -2,7 +2,7 @@
 <?php require_once("header.php");?>
 <?php 
 //print_r($_REQUEST); 
-print_r($_FILES);
+print_r($e);
 
 if(!empty($_FILES)){
 $target_dir = "uploads/";

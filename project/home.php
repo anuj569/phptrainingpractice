@@ -1,9 +1,10 @@
 <?php require_once("header.php"); ?>
+<?php print_r($_SESSION);exit;?>
 <body>
 <?php require_once("left_menu.php"); ?>  
 <div class="container">
   <h3 align="center">
-    List Of Employees
+    List Of Employees<?php print_r($_SESSION); ?>
   </h3>
   <BR/>  
     <?php 
