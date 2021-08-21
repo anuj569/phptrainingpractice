@@ -1,0 +1,7 @@
+
+Failed to connect to MySQL: Access denied for user 'root'@'localhost' (using password: YES)
+Failed to connect to MySQL: Access denied for user 'root'@'localhost' (using password: YES)::
+Failed to connect to MySQL: Access denied for user 'root'@'localhost' (using password: YES)::
+Failed to connect to MySQL: Access denied for user 'root'@'localhost' (using password: YES)::::1
+Failed to connect to MySQL: php_network_getaddresses: getaddrinfo failed: Name or service not known::::1
+Failed to connect to MySQL: php_network_getaddresses: getaddrinfo failed: Name or service not known::::1
