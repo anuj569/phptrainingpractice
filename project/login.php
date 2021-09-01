@@ -1,6 +1,8 @@
 <?php require_once("header.php");?>
 <body>
 <?php
+//print "<PRE>";
+//print_r($_SERVER);
 if(!empty($_REQUEST)){
      //print "<PRE>";
     //print_r($_REQUEST);
@@ -28,6 +30,7 @@ if(!empty($_REQUEST)){
         //$login = validate_login($_REQUEST['username'],$_REQUEST['password']);
         $query = "select * from customer WHERE firstname='{$_REQUEST['username']}' AND password = '$encoded_pwd'";
         echo $query;
+        
         $result = mysqli_query($conn, $query);
         if($result){
             echo "here1";
