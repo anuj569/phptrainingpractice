@@ -71,7 +71,7 @@ if(!empty($_REQUEST)){
         <div class="row">
             <div class="col-md-4 offset-md-4">
                 <div class="login-form bg-light mt-4 p-4">
-                    <form method="GET" class="row g-3">
+                    <form method="POST" class="row g-3">
                         <h4>Welcome Guest</h4>
                         <div class="col-12">
                             <label>Username</label>

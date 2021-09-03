@@ -1,13 +1,41 @@
 <?php
-try {
-    $var_msg = "This is an exception example";
-    throw new Exception($var_msg);
+class DivideByZeroException extends Exception {};
+class DivideByNegativeException extends Exception {};
+
+function process_divide($denominator)
+{
+    try
+    {
+        if ($denominator == 0)
+        {
+            throw new DivideByZeroException();
+        }
+        else if ($denominator < 0)
+        {
+            throw new DivideByNegativeException();
+        }
+        else
+        {
+            echo 100 / $denominator;
+        }
+    }
+    catch (DivideByZeroException $ex)
+    {
+        echo "Divide by zero exception!";
+    }
+    catch (DivideByNegativeException $ex)
+    {
+	print_r($ex);	
+        echo "Divide by negative number exception!";
+    }
+    catch (Exception $x)
+    {
+        echo "UNKNOWN EXCEPTION!";
+    }
+    finally {
+	echo "RRRRRRRRRRRRRR";
+	}		
 }
-catch (Exception $e) {
-    echo "Message: " . $e->getMessage();
-    echo "";
-    echo "getCode(): " . $e->getCode();
-    echo "";
-    echo "__toString(): " . $e->__toString();
-}
+
+process_divide(-23);
 ?>
