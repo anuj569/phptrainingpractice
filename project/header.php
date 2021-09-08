@@ -19,3 +19,4 @@
 
 <?php require_once("constants.php"); ?>
 <?php require_once("common_functions.php"); ?>
+<?php require_once("db_connect.php"); ?>

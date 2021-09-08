@@ -29,24 +29,24 @@ if(!empty($_REQUEST)){
         $encoded_pwd = md5($_REQUEST['password']);
         //$login = validate_login($_REQUEST['username'],$_REQUEST['password']);
         $query = "select * from customer WHERE firstname='{$_REQUEST['username']}' AND password = '$encoded_pwd'";
-        echo $query;
+        //echo $query;
         
         $result = mysqli_query($conn, $query);
         if($result){
-            echo "here1";
+            //echo "here1";
             if(mysqli_num_rows($result) == 1){
-                echo "here2";
+                //echo "here2";
                 $user_data = mysqli_fetch_assoc($result);
                 //print_r($user_data);exit;
                 $login = true;
             }
             else{
-                echo "here3";
+                //echo "here3";
                 $login = false;    
             }
         }
         else{
-            echo "here4";
+            //echo "here4";
             $login = false;    
         }
 

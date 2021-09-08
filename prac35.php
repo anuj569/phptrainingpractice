@@ -1,7 +1,7 @@
 <?php
 
 //$url = 'https://www.cartrade.com/buy-used-cars/mumbai/mercedes-benz/c-class/d2484999.html?dc=0';
-$url = 'https://www.cartrade.com/buy-used-cars/mumbai/mercedes-benz/c-class/d2506149.html?dc=0';
+$url = 'https://www.cartrade.com/buy-used-cars/navi-mumbai/mercedes-benz/c-class/d2510137.html?dc=0';
 echo "hello 1<br>";
 $ch = curl_init();
 curl_setopt($ch, CURLOPT_URL, $url);
@@ -12,7 +12,8 @@ curl_close($ch);
 echo "<BR>hello 2<br>";   
 
 $out = array();
-if(preg_match_all('|<td class="vt1">(.+?)</td><td>(.+?)</td>|',$output,$matches)){
+//if(preg_match_all('|<td class="vt1">\s*(.+?)\s*</td>\s*<td>\s*(.+?)\s*</td>|',$output,$matches)){
+if(preg_match_all('|<td class="vt1">\s*(.+?)\s*</td>\s*<td>\s*(.+?)\s*</td>|',$output,$matches)){
 	print_r($matches);
 	foreach($matches[1] as $key => $val){
 		echo $matches[1][$key] . " => ". $matches[2][$key] . "\n";

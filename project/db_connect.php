@@ -65,6 +65,7 @@ class database_conn {
       }
       */
 }
+$connection = new database_conn("localhost","root","Admin@123","practice");
 /*
 $connection = new database_conn("localhost","root","Admin@123","practice");
 //$connection->db_connect("localhost","root","Admin@123","practice");
